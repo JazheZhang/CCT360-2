@@ -1,27 +1,41 @@
-// 1. Mouse: click the button to switch between light and dark theme
 const themeBtn = document.getElementById("themeBtn");
+const themeName = document.getElementById("themeName");
+
+function updateThemeText() {
+  if (document.body.classList.contains("dark")) {
+    themeBtn.textContent = "Light Mode";
+    themeName.textContent = "dark";
+  } else {
+    themeBtn.textContent = "Dark Mode";
+    themeName.textContent = "light";
+  }
+}
 
 themeBtn.addEventListener("click", function () {
   document.body.classList.toggle("dark");
+  updateThemeText();
 
   if (document.body.classList.contains("dark")) {
-    themeBtn.textContent = "Light Mode";
+    localStorage.setItem("theme", "dark");
   } else {
-    themeBtn.textContent = "Dark Mode";
+    localStorage.setItem("theme", "light");
   }
 });
 
-// 2. Keyboard: show what the user types and count the characters
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+  updateThemeText();
+}
+
 const textInput = document.getElementById("textInput");
 const preview = document.getElementById("preview");
 const count = document.getElementById("count");
 
 textInput.addEventListener("input", function () {
   preview.textContent = textInput.value;
-  count.textContent = "Characters: " + textInput.value.length;
+  count.textContent = textInput.value.length;
 });
 
-// 3. Time (BOM): update the clock every second
 const clock = document.getElementById("clock");
 
 function showTime() {
@@ -31,3 +45,12 @@ function showTime() {
 
 showTime();
 setInterval(showTime, 1000);
+
+const windowSize = document.getElementById("windowSize");
+
+function showSize() {
+  windowSize.textContent = "Window width: " + window.innerWidth + "px";
+}
+
+showSize();
+window.addEventListener("resize", showSize);
