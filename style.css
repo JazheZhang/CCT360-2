@@ -1,31 +1,70 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Helvetica, "Trebuchet MS", Arial;
+  font-size: 18px;
+  font-weight: normal;
   background-color: white;
   color: black;
+  margin: 0;
   padding: 20px;
 }
 
+h1 {
+  color: blue;
+  margin-left: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .box {
-  border: 1px solid #ccc;
-  padding: 15px;
-  margin-bottom: 15px;
+  flex-grow: 1;
+  flex-basis: 250px;
+  padding: 20px;
+  border: 2px solid #c0c0c0;
+  margin: 10px;
   background-color: #f9f9f9;
 }
 
-button {
+
+.btn {
+  position: fixed;   
+  top: 20px;
+  right: 20px;
   padding: 8px 16px;
   cursor: pointer;
 }
 
-input {
-  padding: 6px;
-  width: 250px;
+.highlight {
+  color: blue;
+  font-weight: bold;
 }
 
-/* Dark theme: added to <body> by script.js */
+#textInput {
+  padding: 6px;
+  width: 90%;
+}
+
+#clock {
+  font-size: 36px;
+}
+
 body.dark {
   background-color: #1e1e1e;
   color: white;
+}
+
+body.dark h1 {
+  color: #6fb3ff;
+}
+
+body.dark .highlight {
+  color: #6fb3ff;
 }
 
 body.dark .box {
