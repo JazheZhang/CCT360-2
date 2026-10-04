@@ -1,0 +1,34 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+  padding: 20px;
+}
+
+.box {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+input {
+  padding: 6px;
+  width: 250px;
+}
+
+/* Dark theme: added to <body> by script.js */
+body.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+body.dark .box {
+  background-color: #2d2d2d;
+  border-color: #555;
+}
