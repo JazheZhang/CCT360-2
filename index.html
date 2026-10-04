@@ -4,30 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interactive Page</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
+
+  <button id="themeBtn" class="btn">Dark Mode</button>
   <h1>Interactive Page</h1>
+  <div class="container">
 
-  <!-- 1. Mouse click: light / dark theme -->
-  <div class="box">
-    <h2>Switch the theme</h2>
-    <button id="themeBtn">Dark Mode</button>
-  </div>
+    <div class="box">
+      <h2>Switch the theme</h2>
+      <p>Click the button in the top corner. The theme is now <span id="themeName" class="highlight">light</span>.</p>
+    </div>
 
-  <!-- 2. Keyboard: live text preview -->
-  <div class="box">
-    <h2>Type something</h2>
-    <input id="textInput" type="text" placeholder="Start typing...">
-    <p id="preview">Your text will show here</p>
-    <p id="count">Characters: 0</p>
-  </div>
 
-  <!-- 3. Time: live clock -->
-  <div class="box">
-    <h2>Current time</h2>
-    <p id="clock"></p>
+    <div class="box">
+      <h2>Type something</h2>
+      <input id="textInput" type="text" placeholder="Start typing...">
+      <p id="preview">Your text will show here</p>
+      <p>Characters: <span id="count" class="highlight">0</span></p>
+    </div>
+
+    <div class="box">
+      <h2>Time and window</h2>
+      <p id="clock"></p>
+      <p id="windowSize"></p>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
