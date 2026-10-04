@@ -3,51 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Respond to the User</title>
+  <title>Interactive Page</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="day">
+<body>
 
-  <header class="topbar">
-    <h1 id="greeting">Hello</h1>
-    <p id="clock" class="clock">--:--:--</p>
-  </header>
+  <h1>Interactive Page</h1>
 
-  <main>
-    <!-- 1. MOUSE: spotlight follows the cursor -->
-    <section class="card" id="stage">
-      <h2>Move your mouse (or finger) here</h2>
-      <p id="coords">x: 0, y: 0</p>
-      <div id="spotlight"></div>
-    </section>
+  <!-- 1. Mouse click: light / dark theme -->
+  <div class="box">
+    <h2>Switch the theme</h2>
+    <button id="themeBtn">Dark Mode</button>
+  </div>
 
-    <!-- 2. KEYBOARD: switch themes -->
-    <section class="card">
-      <h2>Press a key</h2>
-      <p>Press <kbd>1</kbd> for day, <kbd>2</kbd> for dusk, <kbd>3</kbd> for night.</p>
-      <p>Current theme: <strong id="theme-label">day</strong></p>
-      <p id="last-key" class="muted">Last key pressed: none</p>
-    </section>
+  <!-- 2. Keyboard: live text preview -->
+  <div class="box">
+    <h2>Type something</h2>
+    <input id="textInput" type="text" placeholder="Start typing...">
+    <p id="preview">Your text will show here</p>
+    <p id="count">Characters: 0</p>
+  </div>
 
-    <!-- 3. CLICK: add and remove notes -->
-    <section class="card">
-      <h2>Leave a note</h2>
-      <form id="note-form">
-        <input id="note-input" type="text" placeholder="Type a note and press Enter" maxlength="60" required>
-        <button type="submit">Add</button>
-      </form>
-      <p class="muted">Double click a note to remove it.</p>
-      <ul id="notes"></ul>
-    </section>
-
-    <!-- 4. WINDOW: live viewport info (BOM) -->
-    <section class="card">
-      <h2>Resize the window</h2>
-      <p id="viewport">Viewport: 0 x 0</p>
-      <p>Layout: <strong id="layout-label">desktop</strong></p>
-      <p id="browser-info" class="muted"></p>
-    </section>
-  </main>
+  <!-- 3. Time: live clock -->
+  <div class="box">
+    <h2>Current time</h2>
+    <p id="clock"></p>
+  </div>
 
   <script src="script.js"></script>
 </body>
